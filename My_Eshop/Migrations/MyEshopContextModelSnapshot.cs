@@ -75,6 +75,88 @@ namespace My_Eshop.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("categoryToProducts");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 1,
+                            CategoryId = 1
+                        },
+                        new
+                        {
+                            ProductId = 1,
+                            CategoryId = 2
+                        },
+                        new
+                        {
+                            ProductId = 1,
+                            CategoryId = 3
+                        },
+                        new
+                        {
+                            ProductId = 1,
+                            CategoryId = 4
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            CategoryId = 1
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            CategoryId = 2
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            CategoryId = 3
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            CategoryId = 4
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            CategoryId = 1
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            CategoryId = 2
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            CategoryId = 3
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            CategoryId = 4
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            CategoryId = 1
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            CategoryId = 2
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            CategoryId = 3
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            CategoryId = 4
+                        });
                 });
 
             modelBuilder.Entity("My_Eshop.Models.Item", b =>
@@ -85,7 +167,7 @@ namespace My_Eshop.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("Money");
 
                     b.Property<int>("QuantityInStock")
                         .HasColumnType("int");
@@ -93,6 +175,32 @@ namespace My_Eshop.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Items");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Price = 854.0m,
+                            QuantityInStock = 5
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Price = 144.8m,
+                            QuantityInStock = 8
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Price = 442.0m,
+                            QuantityInStock = 4
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Price = 2500m,
+                            QuantityInStock = 3
+                        });
                 });
 
             modelBuilder.Entity("My_Eshop.Models.Product", b =>
@@ -117,6 +225,36 @@ namespace My_Eshop.Migrations
                         .IsUnique();
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Asp.net آموزش",
+                            ItemId = 1,
+                            Name = "Asp.net Core 3"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Blazor آموزش",
+                            ItemId = 2,
+                            Name = "Blazor‌"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "PWA آموزش",
+                            ItemId = 3,
+                            Name = "PWA"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Entity آموزش",
+                            ItemId = 4,
+                            Name = "Entity"
+                        });
                 });
 
             modelBuilder.Entity("My_Eshop.Models.CategoryToProduct", b =>
